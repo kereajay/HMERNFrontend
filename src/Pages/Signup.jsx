@@ -33,7 +33,7 @@ function Signup() {
     e.preventDefault();
     // console.log(formdata)
     try{
-      const res=await fetch("http://localhost:9000/api/v1/user/patient/signup",{
+      const res=await fetch("https://hmernbackend.onrender.com/api/v1/user/patient/signup",{
         withCredntials: true,
         credentials: "include",
         method:"POST",

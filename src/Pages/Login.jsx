@@ -21,7 +21,7 @@ function Login() {
     e.preventDefault();
     // Handle form submission logic here (e.g., send data to backend)
     // console.log('Form data submitted:', formData);
-    const res = await fetch("http://localhost:9000/api/v1/user/login", {
+    const res = await fetch("https://hmernbackend.onrender.com/api/v1/user/login", {
       withCredntials: true,
       credentials: "include",
       method: "POST",

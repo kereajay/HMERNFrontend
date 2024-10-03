@@ -20,7 +20,7 @@ const ContactForm = () => {
     // Handle form submission logic here (e.g., send data to backend)
     // console.log('Form data submitted:', formData);
     try {
-      const res = await fetch("http://localhost:9000/api/v1/message/send", {
+      const res = await fetch("https://hmernbackend.onrender.com/api/v1/message/send", {
         withCredntials: true,
         credentials: "include",
         method: "POST",

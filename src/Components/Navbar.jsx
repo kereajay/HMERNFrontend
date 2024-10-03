@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   const handlelogout = async () => {
-    const res = await fetch("http://localhost:9000/api/v1/user/patientlogout", {
+    const res = await fetch("https://hmernbackend.onrender.com/api/v1/user/patientlogout", {
       withCredntials: true,
       credentials: "include",
       method: "GET",

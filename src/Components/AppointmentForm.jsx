@@ -33,7 +33,7 @@ function AppointmentForm() {
   useEffect(() => {
     const fetchdoctors = async () => {
       const res = await fetch(
-        "http://localhost:9000/api/v1/user/getalldoctors",
+        "https://hmernbackend.onrender.com/api/v1/user/getalldoctors",
         {
           withCredntials: true,
           credentials: "include",
@@ -85,7 +85,7 @@ function AppointmentForm() {
         hasVisited,
       };
       const res = await fetch(
-        "http://localhost:9000/api/v1/Appointment/bookAppointment",
+        "https://hmernbackend.onrender.com/api/v1/Appointment/bookAppointment",
         {
           withCredntials: true,
           credentials: "include",
