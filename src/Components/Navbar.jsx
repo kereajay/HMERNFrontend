@@ -25,12 +25,15 @@ function Navbar() {
   };
 
   const handlelogout = async () => {
-    const res = await fetch("https://hmernbackend.onrender.com/api/v1/user/patientlogout", {
-      withCredntials: true,
-      credentials: "include",
-      method: "GET",
-      // credentials: 'include',
-    });
+    const res = await fetch(
+      "https://hmernbackend.onrender.com/api/v1/user/patientlogout",
+      {
+        withCredntials: true,
+        credentials: "include",
+        method: "GET",
+        // credentials: 'include',
+      }
+    );
     const data = await res.json();
     if (data.success == false) {
       toast.error(data.message, {
@@ -104,6 +107,12 @@ function Navbar() {
               Login
             </button>
           )}
+          <Link to="https://hmern-dashboard.vercel.app/">
+            {" "}
+            <button className="text-xl font-semibold bg-blue-400 py-1 px-2 rounded-2xl text-white">
+              Admin
+            </button>
+          </Link>
         </div>
       </div>
       <div className="text-3xl lg:hidden md:visible sm:visible dark:bg-black text-blue-500 p-2">
@@ -117,18 +126,23 @@ function Navbar() {
           >
             <li className="text-3xl   py-1 ">AJCARE</li>
 
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/appointment">Appointment</Link>
-            </li>
-            <li>
-              <Link to="/about">AboutUs</Link>
-            </li>
-            <li onClick={handletheme}>
-              <IoSunnySharp />
-            </li>
+            {isAuthenticated && (
+              <ul>
+                {" "}
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/appointment">Appointment</Link>
+                </li>
+                <li>
+                  <Link to="/about">AboutUs</Link>
+                </li>
+                <li onClick={handletheme}>
+                  <IoSunnySharp />
+                </li>{" "}
+              </ul>
+            )}
 
             {isAuthenticated === true ? (
               <button
@@ -145,7 +159,12 @@ function Navbar() {
                 Login
               </button>
             )}
-           
+            <Link to="https://hmern-dashboard.vercel.app/">
+              {" "}
+              <button className="text-xl font-semibold bg-blue-500 py-1 px-2 rounded-2xl text-white w-28">
+                Admin
+              </button>
+            </Link>
           </ul>
         </div>
       )}

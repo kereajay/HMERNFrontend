@@ -19,20 +19,19 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here (e.g., send data to backend)
-    // console.log('Form data submitted:', formData);
-    const res = await fetch("https://hmernbackend.onrender.com/api/v1/user/login", {
-      withCredntials: true,
-      credentials: "include",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify(formData),
-    });
+    const res = await fetch(
+      "https://hmernbackend.onrender.com/api/v1/user/login",
+      {
+        withCredntials: true,
+        credentials: "include",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
     const data = await res.json();
-    // console.log(data)
 
     if (data.success === true) {
       toast.success(data.message, {
@@ -46,84 +45,98 @@ function Login() {
       });
     }
   };
-  if (isAuthenticated == true) {
-    <Navigate to={"/"} />;
+
+  if (isAuthenticated === true) {
+    return <Navigate to={"/"} />;
   }
 
   return (
-    <div className="mt-10 ">
-      <div className="text-center mb-10">
-        <h1 className="text-2xl font-bold">Login</h1>
-      </div>
-      <div className="max-w-lg mx-auto p-4">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-xl font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-xl font-medium text-gray-700"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="confirmpassword"
-              className="block text-xl font-medium text-gray-700"
-            >
-              ConfirmPassword
-            </label>
-            <input
-              type="password"
-              name="confirmpassword"
-              id="confirmpassword"
-              value={formData.confirmpassword}
-              onChange={handleChange}
-              className="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-            />
-          </div>
-          <div>
-            <p>
-              Not Registered /
-              <Link to="/signup" className="text-blue-400">
-                Signup
-              </Link>{" "}
-            </p>
-          </div>
+    <div className="mt-10 px-4 md:px-0 py-14">
+      <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className="mb-8 md:mb-0 md:mr-8 w-full md:w-1/2">
+          <img
+            src="https://cdn.dribbble.com/users/1172503/screenshots/4505740/login-form.gif"
+            alt="Login Animation"
+            className="w-full h-auto object-cover rounded-lg "
+          />
+        </div>
 
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            Login
-          </button>
-        </form>
+        <div className="max-w-lg w-full md:w-1/2 bg-white p-6 rounded-xl shadow-[10px_10px_60px_0px_#ecc94b]">
+          <div className="text-center mb-10">
+            <h1 className="text-3xl font-bold text-blue-500">Login</h1>
+          </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-lg font-medium text-gray-700"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 p-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-lg font-medium text-gray-700"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="mt-1 p-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="confirmpassword"
+                className="block text-lg font-medium text-gray-700"
+              >
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                name="confirmpassword"
+                id="confirmpassword"
+                value={formData.confirmpassword}
+                onChange={handleChange}
+                className="mt-1 p-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+
+            <div>
+              <p>
+                Not Registered?{" "}
+                <Link to="/signup" className="text-indigo-600 hover:underline">
+                  Signup
+                </Link>
+              </p>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3 px-4 bg-indigo-600 text-white text-lg font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200"
+            >
+              Login
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
