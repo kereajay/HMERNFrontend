@@ -93,12 +93,10 @@ function Navbar() {
             <IoSunnySharp />
           </p>
           {isAuthenticated === true ? (
-            <button
-              className="text-xl font-semibold bg-blue-400 py-1 px-2 rounded-2xl text-white"
-              onClick={handlelogout}
-            >
-              Logout
-            </button>
+           <button class="bg-blue-300 text-lg text-black border border-blue-400 border-b-4 font-bold overflow-hidden relative px-4 py-2 rounded-3xl hover:brightness-10 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"  onClick={handlelogout}>
+           <span class="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+           Logout
+         </button>
           ) : (
             <button class="bg-blue-300 text-lg text-black border border-blue-400 border-b-4 font-bold overflow-hidden relative px-4 py-2 rounded-3xl hover:brightness-10 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"  onClick={handlelogin}>
               <span class="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
