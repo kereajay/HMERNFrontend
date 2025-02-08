@@ -55,8 +55,8 @@ function Navbar() {
     navigate("/login");
   };
   return (
-    <div>
-      <div className="lg:flex md:hidden sm:hidden  px-4  py-2 text-grey-500 dark:bg-black dark:text-white items-center justify-between">
+    <div className="shadow-[inset_0px_0px_20px_10px_#bee3f8]  fixed top-0 w-full z-50 bg-white">
+      <div className="lg:flex md:hidden sm:hidden  px-4  py-2 text-grey-500 dark:bg-black dark:text-white items-center justify-between ">
         <div className="flex gap-4 items-center ">
           {/* <img src={ajay} alt="" width={50}  className='rounded-full'/> */}
           <h1 className="text-3xl  px-4 py-1 flex items-center gap-2 text-blue-500">
@@ -93,12 +93,18 @@ function Navbar() {
             <IoSunnySharp />
           </p>
           {isAuthenticated === true ? (
-           <button class="bg-blue-300 text-lg text-black border border-blue-400 border-b-4 font-bold overflow-hidden relative px-4 py-2 rounded-3xl hover:brightness-10 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"  onClick={handlelogout}>
-           <span class="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
-           Logout
-         </button>
+            <button
+              class="bg-blue-300 text-lg text-black border border-blue-400 border-b-4 font-bold overflow-hidden relative px-4 py-2 rounded-3xl hover:brightness-10 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
+              onClick={handlelogout}
+            >
+              <span class="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+              Logout
+            </button>
           ) : (
-            <button class="bg-blue-300 text-lg text-black border border-blue-400 border-b-4 font-bold overflow-hidden relative px-4 py-2 rounded-3xl hover:brightness-10 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"  onClick={handlelogin}>
+            <button
+              class="bg-blue-300 text-lg text-black border border-blue-400 border-b-4 font-bold overflow-hidden relative px-4 py-2 rounded-3xl hover:brightness-10 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
+              onClick={handlelogin}
+            >
               <span class="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
               Login
             </button>

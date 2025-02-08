@@ -49,7 +49,7 @@ const ContactForm = () => {
 
   return (
     <div className="mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center text-gray-500 py-10">
+      <h1 className="text-3xl font-bold text-center text-blue-400 py-10">
         Send Us A Message
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">

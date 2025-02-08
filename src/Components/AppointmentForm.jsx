@@ -101,22 +101,20 @@ function AppointmentForm() {
         toast.success(data.message, {
           autoClose: 1500,
         });
-        setFirstName("")
-        setLastName("")
-        setAddress("")
-        setAppointment_date("")
-        setDepartment("")
-        setDob("")
-        setDoctor_firstName("")
-        setDoctor_lastName("")
+        setFirstName("");
+        setLastName("");
+        setAddress("");
+        setAppointment_date("");
+        setDepartment("");
+        setDob("");
+        setDoctor_firstName("");
+        setDoctor_lastName("");
         // setDoctors("")
-        setEmail("")
-        setGender("")
-        setHasVisited(false)
-        setNic('')
-        setPhone("")
-       
-
+        setEmail("");
+        setGender("");
+        setHasVisited(false);
+        setNic("");
+        setPhone("");
       } else {
         toast.error(data.message, {
           autoClose: 1500,
@@ -130,7 +128,7 @@ function AppointmentForm() {
 
   return (
     <div className="m-10">
-      <h1 className="text-3xl font-semibold text-gray-500 text-center">
+      <h1 className="text-3xl font-semibold text-blue-400 text-center">
         Book an Appointment
       </h1>
       <br />
@@ -362,7 +360,7 @@ function AppointmentForm() {
           <br />
 
           <div className="flex gap-2 items-center">
-            <p>Have you visited before</p>
+            <p className="dark:text-gray-500">Have you visited before</p>
             <input
               type="checkbox"
               checked={hasVisited}

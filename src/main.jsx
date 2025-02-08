@@ -20,6 +20,6 @@ const Appwraper=()=>{
 createRoot(document.getElementById('root')).render(
   <StrictMode>
    <Appwraper/>
-  </StrictMode>,
+  </StrictMode>
 )
 

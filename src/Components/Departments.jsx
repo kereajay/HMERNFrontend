@@ -68,7 +68,7 @@ function Departments() {
   return (
     <div>
       <div className='py-24'>
-        <h2 className='text-3xl font-bold px-28 py-5 text-gray-500'>Departments</h2>
+        <h2 className='text-3xl font-bold px-28 py-5 text-blue-400'>Departments</h2>
         <Carousel
           swipeable={false}
           draggable={false}

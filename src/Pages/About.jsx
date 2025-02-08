@@ -6,9 +6,11 @@ import Footer from '../Components/Footer'
 function About() {
   return (
     <>
-     <Hero title={"Learn more about Ajcare of medical institute"} imageurl={"/about.png"} />
-     <Biography imgurl={"/whoweare.png"} />
+    <div className='mt-20'>
+     <Hero title={"Learn more about Ajcare of medical institute"} imageurl={"/Aboutus2.webp"} />
+     <Biography imgurl={"/whoarewe.webp"} />
      <Footer/>
+     </div>
     </>
   )
 }

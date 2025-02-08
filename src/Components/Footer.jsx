@@ -38,8 +38,9 @@ function Footer() {
     },
   ];
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 p-2  py-10 dark:text-gray-400">
-      <div>
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 p-2  py-10 dark:text-gray-400 shadow-[inset_-1100px_5px_100px_50px_#bee3f8]">
+      <div className="flex flex-col justify-center">
+        <h1 className="text-5xl font-bold text-center text-blue-500 font-mono">AJ</h1>
         <img
           src="https://hospitalmanagementsystem.org/images/hospital-management-system-logo-dark.png"
           alt=""
@@ -47,9 +48,9 @@ function Footer() {
         />
       </div>
       <div className="items-center">
-        <h1 className="text-3xl font-semibold text-gray-500 ">Quick Links</h1>
+        <h1 className="text-3xl font-semibold text-blue-500 ">Quick Links</h1>
         <br />
-        <hr className="border-4" />
+        <hr className="border-4 border-blue-400" />
 
         <ul type="none" className=" text-lg text-gray-500 font-semibold">
           <Link to={"/"}>
@@ -64,9 +65,9 @@ function Footer() {
         </ul>
       </div>
       <div>
-        <h1 className="text-3xl font-semibold text-gray-500 ">Hours</h1>
+        <h1 className="text-3xl font-semibold text-blue-500 ">Hours</h1>
         <br />
-        <hr className="border-4" />
+        <hr className="border-4 border-blue-400" />
 
         {hours.map((item) => {
           return (
@@ -80,9 +81,9 @@ function Footer() {
         })}
       </div>
       <div>
-        <h1 className="text-3xl font-semibold text-gray-500 ">Contact</h1>
+        <h1 className="text-3xl font-semibold text-blue-500 ">Contact</h1>
         <br />
-        <hr className="border-4" />
+        <hr className="border-4 border-blue-400" />
 
         <div className="mt-1">
           <ul type="none">
